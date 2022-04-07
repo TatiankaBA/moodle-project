@@ -1,3 +1,4 @@
+
 from selenium.webdriver.common.by import By
 
 
@@ -33,3 +34,5 @@ class AuthorisationPageLocators():
      password_recover_result = (By.CSS_SELECTOR, "div.result")   
      required_maker_on_psw_recover_page = (By.CSS_SELECTOR, "div.page.password-recovery-page span.required")  
      account_information =  (By.CSS_SELECTOR, "a.account")  
+     error_message_unsuccessfull_login = (By.CSS_SELECTOR, "div.validation-summary-errors span")
+     error_message_wrong_credentials = (By.CSS_SELECTOR, "div.validation-summary-errors ul li")

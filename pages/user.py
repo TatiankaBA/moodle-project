@@ -5,6 +5,8 @@ class User:
     email = "ai566laddress@mail.ru"
     password = 'rightpassword'
     gender = 'male'
+    wrong_email = 'wrongemeail@mail.ru'
+    wrong_password = 'wrongpassword'
 
 
 

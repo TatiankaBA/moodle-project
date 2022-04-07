@@ -21,3 +21,34 @@ def test_registered_user_successfully_logged_in(browser):
     page = AuthorisationPage(browser,link)
     page.open()
     page.existed_user_logged_in_successfully()
+
+def test_right_email_wrong_password_login_failed(browser):
+    link = AllLinks.login_url
+    page = AuthorisationPage(browser,link)
+    page.open()
+    page.right_email_wrong_password_login_failed()
+
+def test_wrong_email_right_password_login_failed(browser):
+    link = AllLinks.login_url
+    page = AuthorisationPage(browser,link)
+    page.open()
+    page.wrong_email_right_password_login_failed()
+
+def test_wrong_email_wrong_password_login_failed(browser):
+    link = AllLinks.login_url
+    page = AuthorisationPage(browser,link)
+    page.open()
+    page.wrong_email_right_password_login_failed()
+
+def test_empty_fields_login_failed(browser):
+    link = AllLinks.login_url
+    page = AuthorisationPage(browser,link)
+    page.open()
+    page.empty_fields_login_failed()
+
+
+
+
+
+
+      

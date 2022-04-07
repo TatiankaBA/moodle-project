@@ -33,13 +33,58 @@ class AuthorisationPage(RegisterPage):
         assert self.is_element_present(*AuthorisationPageLocators.account_information), "The user hasn't been authorised"
         
         
+    def right_email_wrong_password_login_failed(self):
+        email_field = self.browser.find_element(*AuthorisationPageLocators.email_field)  
+        email_field.send_keys(User.email)       
+        password_field =  self.browser.find_element(*AuthorisationPageLocators.password_field)
+        password_field.send_keys(User.wrong_password)
+        login_btn = self.browser.find_element(*AuthorisationPageLocators.log_in_btn)
+        login_btn.click()
+        assert self.is_element_present(*AuthorisationPageLocators.error_message_unsuccessfull_login), "The error message is absent"
+        error_message_unsuccessfull_login = self.browser.find_element(*AuthorisationPageLocators.error_message_unsuccessfull_login)
+        assert error_message_unsuccessfull_login.text == 'Login was unsuccessful. Please correct the errors and try again.', "The error message is not correct"
+        assert self.is_element_present(*AuthorisationPageLocators.error_message_wrong_credentials), "The error message about the wrong credentials is absent"
+        error_message_wrong_credentials = self.browser.find_element(*AuthorisationPageLocators.error_message_wrong_credentials)
+        assert error_message_wrong_credentials.text == 'The credentials provided are incorrect', "The error message about the wrong credentials is not correct"
 
-    def right_login_wrong_password_failed(self):
-        pass
+    def wrong_email_right_password_login_failed(self):
+        email_field = self.browser.find_element(*AuthorisationPageLocators.email_field)  
+        email_field.send_keys(User.wrong_email)       
+        password_field =  self.browser.find_element(*AuthorisationPageLocators.password_field)
+        password_field.send_keys(User.password)
+        login_btn = self.browser.find_element(*AuthorisationPageLocators.log_in_btn)
+        login_btn.click()
+        assert self.is_element_present(*AuthorisationPageLocators.error_message_unsuccessfull_login), "The error message is absent"
+        error_message_unsuccessfull_login = self.browser.find_element(*AuthorisationPageLocators.error_message_unsuccessfull_login)
+        assert error_message_unsuccessfull_login.text == 'Login was unsuccessful. Please correct the errors and try again.', "The error message is not correct"
+        assert self.is_element_present(*AuthorisationPageLocators.error_message_wrong_credentials), "The error message about the wrong credentials is absent"
+        error_message_wrong_credentials = self.browser.find_element(*AuthorisationPageLocators.error_message_wrong_credentials)
+        assert error_message_wrong_credentials.text == 'No customer account found', "The error message about the wrong credentials is not correct"
 
-    def wrong_login_right_password_login_failed(self):
-        pass
-    def wrong_login_wrong_password_login_failed(self):
-        pass
+    def wrong_email_wrong_password_login_failed(self):
+        email_field = self.browser.find_element(*AuthorisationPageLocators.email_field)  
+        email_field.send_keys(User.wrong_email)       
+        password_field =  self.browser.find_element(*AuthorisationPageLocators.password_field)
+        password_field.send_keys(User.wrong_password)
+        login_btn = self.browser.find_element(*AuthorisationPageLocators.log_in_btn)
+        login_btn.click()
+        assert self.is_element_present(*AuthorisationPageLocators.error_message_unsuccessfull_login), "The error message is absent"
+        error_message_unsuccessfull_login = self.browser.find_element(*AuthorisationPageLocators.error_message_unsuccessfull_login)
+        assert error_message_unsuccessfull_login.text == 'Login was unsuccessful. Please correct the errors and try again.', "The error message is not correct"
+        assert self.is_element_present(*AuthorisationPageLocators.error_message_wrong_credentials), "The error message about the wrong credentials is absent"
+        error_message_wrong_credentials = self.browser.find_element(*AuthorisationPageLocators.error_message_wrong_credentials)
+        assert error_message_wrong_credentials.text == 'No customer account found', "The error message about the wrong credentials is not correct"
+
     def empty_fields_login_failed(self):
-        pass
+        email_field = self.browser.find_element(*AuthorisationPageLocators.email_field)  
+        email_field.send_keys('')       
+        password_field =  self.browser.find_element(*AuthorisationPageLocators.password_field)
+        password_field.send_keys('')
+        login_btn = self.browser.find_element(*AuthorisationPageLocators.log_in_btn)
+        login_btn.click()
+        assert self.is_element_present(*AuthorisationPageLocators.error_message_unsuccessfull_login), "The error message is absent"
+        error_message_unsuccessfull_login = self.browser.find_element(*AuthorisationPageLocators.error_message_unsuccessfull_login)
+        assert error_message_unsuccessfull_login.text == 'Login was unsuccessful. Please correct the errors and try again.', "The error message is not correct"
+        assert self.is_element_present(*AuthorisationPageLocators.error_message_wrong_credentials), "The error message about the wrong credentials is absent"
+        error_message_wrong_credentials = self.browser.find_element(*AuthorisationPageLocators.error_message_wrong_credentials)
+        assert error_message_wrong_credentials.text == 'No customer account found', "The error message about the wrong credentials is not correct"
