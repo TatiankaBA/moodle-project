@@ -16,7 +16,7 @@ class RegisterPageLocators():
 
 class AuthorisationPageLocators():
      log_in_form = (By.CSS_SELECTOR, ".returning-wrapper")
-     form_title = (By.CSS_SELECTOR, "div.title strong")
+     form_title = (By.CSS_SELECTOR, "div.returning-wrapper div.title strong")
      email_field = (By.CSS_SELECTOR, "#Email")
      email_label = (By.CSS_SELECTOR, "label[for='Email']")
      password_field = (By.CSS_SELECTOR, "#Password")
@@ -36,3 +36,4 @@ class AuthorisationPageLocators():
      account_information =  (By.CSS_SELECTOR, "a.account")  
      error_message_unsuccessfull_login = (By.CSS_SELECTOR, "div.validation-summary-errors span")
      error_message_wrong_credentials = (By.CSS_SELECTOR, "div.validation-summary-errors ul li")
+     error_message_invalid_email = (By.CSS_SELECTOR, "span.field-validation-error span[for='Email']")

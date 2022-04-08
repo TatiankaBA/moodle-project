@@ -7,6 +7,7 @@ class User:
     gender = 'male'
     wrong_email = 'wrongemeail@mail.ru'
     wrong_password = 'wrongpassword'
+    invalid_email = 'dfddgf'
 
 
 
