@@ -8,7 +8,7 @@ from .pages.locators import AuthorisationPageLocators
 from .pages.base_page import *
 
 
-@pytest.mark.ui
+@pytest.mark.retest
 def test_log_in_form_is_present(browser):
     link = AllLinks.login_url
     page = AuthorisationPage(browser,link)
