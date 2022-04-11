@@ -88,7 +88,7 @@ def test_forgot_password_link_right_href(browser):
     assert forgot_password_link_href.get_attribute('href') == AllLinks.password_recovery, 'The forgot password link is not correct' 
 
 #the user shouldn't exist to run tests correctly, first create new user data in the file 'user.py'
-@pytest.mark.skip
+@pytest.mark.functional_tests
 def test_new_user_successfully_registered(browser):
     link = AllLinks.register_url
     page = AuthorisationPage(browser,link)

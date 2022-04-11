@@ -13,8 +13,8 @@ class ExistedUser:
     first_name = 'Pavel'
     last_name = 'Pavlov'
     email = "ai566laddress@mail.ru"
-    password = 'newpasswordfortest5'
-    new_password = 'newpasswordfortest6'
+    password = 'newpasswordfortest6'
+    new_password = 'newpasswordfortest7'
     wrong_password = 'wrongpassword'
     wrong_password2 = 'wrongpassword234'
     less6digitpassword = '12345'
